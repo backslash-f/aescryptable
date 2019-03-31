@@ -11,7 +11,7 @@ Interesting reading: [Differences between DES and AES](http://bit.ly/desVSaes)
 
 ## Swift 5
 In Swift 5, there are some changes around `withUnsafeBytes(_:)` (and a couple of bugs as a result).  
-For instance, refer to this forums.swift.org post: [*use of withunsafebytes*](http://bit.ly/withUnsafeBytes).
+Refer to this forums.swift.org post: [*use of withunsafebytes*](http://bit.ly/withUnsafeBytes).
 
 This AES implementation relies on `UnsafeRawPointer.assumingMemoryBound(to:)` to make
 `withUnsafeBytes(_:)` to work (and silent warnings). This is probably going to change in the next Swift versions.
