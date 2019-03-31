@@ -24,18 +24,17 @@ extension AES: Cryptable {
             throw AESError.stringToDataFailed
         }
 
+        #warning("FIXME: bytesBoundToInt is no more")
         guard let dataToEncryptBytes: UnsafePointer<Int> = dataToEncrypt.bytesBoundToInt() else {
-            throw AESError.bindBytesToIntFailed
-        }
-
-        guard keyBytes != nil else {
-            throw AESError.bindBytesToIntFailed
+            return Data()
         }
 
         let encryptedDataLength: Int = dataToEncrypt.count + (ivSize + kCCBlockSizeAES128)
         var encryptedData: Data = Data(count: encryptedDataLength)
+
+        #warning("FIXME: mutableBytesBoundToInt is no more")
         guard let encryptedDataBytes: UnsafeMutablePointer<Int> = encryptedData.mutableBytesBoundToInt() else {
-            throw AESError.bindMutableBytesToIntFailed
+            return Data()
         }
         try generateRandomIV(for: encryptedDataBytes)
 
@@ -66,18 +65,17 @@ extension AES: Cryptable {
     // MARK: - Decrypt
 
     public func decrypt(_ data: Data) throws -> String {
+        #warning("FIXME: bytesBoundToInt is no more")
         guard let dataToDecryptBytes: UnsafePointer<Int> = data.bytesBoundToInt() else {
-            throw AESError.bindBytesToIntFailed
+            return ""
         }
 
         let decryptedDataLength: Int = data.count - ivSize
         var decryptedData: Data = Data(count: decryptedDataLength)
-        guard let decryptedDataBytes: UnsafeMutablePointer<Int> = decryptedData.mutableBytesBoundToInt() else {
-            throw AESError.bindMutableBytesToIntFailed
-        }
 
-        guard keyBytes != nil else {
-            throw AESError.bindBytesToIntFailed
+        #warning("FIXME: mutableBytesBoundToInt is no more")
+        guard let decryptedDataBytes: UnsafeMutablePointer<Int> = decryptedData.mutableBytesBoundToInt() else {
+            return ""
         }
 
         var numberOfBytesDecrypted: Int = 0

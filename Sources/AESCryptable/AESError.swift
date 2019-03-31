@@ -8,8 +8,6 @@
 
 /// Encapsulates errors that may occur during AES encrypt / decrypt operations.
 ///
-/// - bindBytesToIntFailed: `UnsafeRawPointer.assumingMemoryBound(to:)` using `Int.self` failed.
-/// - bindMutableBytesToIntFailed: `UnsafeMutableRawPointer.assumingMemoryBound(to:)` using `Int.self` failed.
 /// - dataToStringFailed: Failed to convert `Data` into `String`. E.g.: via `String.init(bytes:encoding:)`.
 /// - decryptDataFailed: `CCCryptorStatus` was different than `kCCSuccess` during a decryption operation.
 /// - emptyStringToEncrypt: The given `String` to encrypt is empty.
@@ -18,8 +16,6 @@
 /// - invalidKeySize: The given key `String` count isn't equal to `kCCKeySizeAES256`.
 /// - stringToDataFailed: Failed to convert `String` into `Data` via `data(using:allowLossyConversion:)`.
 public enum AESError: Error {
-    case bindBytesToIntFailed
-    case bindMutableBytesToIntFailed
     case dataToStringFailed
     case decryptDataFailed
     case emptyStringToEncrypt
