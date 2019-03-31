@@ -15,7 +15,7 @@ extension AES: Cryptable {
 
     // MARK: - Encrypt
 
-    func encrypt(_ string: String) throws -> Data {
+    public func encrypt(_ string: String) throws -> Data {
         guard !string.isEmpty else {
             throw AESError.emptyStringToEncrypt
         }
@@ -65,7 +65,7 @@ extension AES: Cryptable {
 
     // MARK: - Decrypt
 
-    func decrypt(_ data: Data) throws -> String {
+    public func decrypt(_ data: Data) throws -> String {
         guard let dataToDecryptBytes: UnsafePointer<Int> = data.bytesBoundToInt() else {
             throw AESError.bindBytesToIntFailed
         }
