@@ -24,7 +24,7 @@ public struct AES {
 
     // MARK: Key Related
 
-    internal let keyData: Data
+    public let keyData: Data
 
     internal var keyLength: Int {
         return keyData.count
