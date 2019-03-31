@@ -48,7 +48,7 @@ public struct AES {
     ///
     /// - Parameter keyString: 256 bit AES key size.
     /// - Throws: `AESError`
-    init(keyString: String) throws {
+    public init(keyString: String) throws {
         guard keyString.count == kCCKeySizeAES256 else {
             throw AESError.invalidKeySize
         }
