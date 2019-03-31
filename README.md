@@ -13,15 +13,6 @@ Provides `Advanced Encryption Standard (AES)` encryption / decryption capabiliti
 
 Interesting reading: [Differences between DES and AES](http://bit.ly/desVSaes)
 
-## Swift 5
-In Swift 5, there are some changes around `withUnsafeBytes(_:)` (and a couple of bugs as a result).  
-Refer to this forums.swift.org post: [*use of withUnsafeBytes*](http://bit.ly/withUnsafeBytes). Or this: [*withUnsafeBytes Data API confusion*](https://forums.swift.org/t/withunsafebytes-data-api-confusion/22142).
-
-This AES implementation relies on `UnsafeRawPointer.assumingMemoryBound(to:)` to make
-`withUnsafeBytes(_:)` to work (and silent warnings). This is probably going to change in the next Swift versions.
-
-The [`extension Data`](https://github.com/backslash-f/aes-swift/blob/master/Sources/DataExtension.swift) aims to abstract some of the complexity around the subject.
-
 ## Integration
 In your `Package.swift`, add `AESCryptable` as a dependency:
 ```swift
