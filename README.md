@@ -1,5 +1,5 @@
-[![swift-5.0](https://img.shields.io/badge/swift-5.0-green.svg)](https://github.com/apple/swift)
-[![package%20manager-compatible](https://img.shields.io/badge/package%20manager-compatible-green.svg)](https://github.com/apple/swift-package-manager)
+[![swift-5.0](https://img.shields.io/badge/swift-5.0-brightgreen.svg)](https://github.com/apple/swift)
+[![package%20manager-compatible](https://img.shields.io/badge/package%20manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![build status](https://travis-ci.com/backslash-f/aescryptable.svg?branch=master)](https://travis-ci.com/backslash-f/aescryptable)
 
 # AESCryptable
