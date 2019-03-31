@@ -30,7 +30,7 @@ dependencies: [
 Associate the dependency with your target:
 ```swift
 targets: [
-.target(name: "App", dependencies: ["AESCryptable"]),
+.target(name: "App", dependencies: ["AESCryptable"])
 ]
 ```
 Run: `swift build`
