@@ -22,15 +22,15 @@ The [`extension Data`](https://github.com/backslash-f/aes-swift/blob/master/Sour
 In your `Package.swift`, add `AESCryptable` as a dependency:
 ```swift
 dependencies: [
-// 🔐 AES encryption/decryption with random iv. Swift 5 and up.
-.package(url: "https://github.com/backslash-f/aescryptable", from: "1.0.0")
+  // 🔐 AES encryption/decryption with random iv. Swift 5 and up.
+  .package(url: "https://github.com/backslash-f/aescryptable", from: "1.0.0")
 ],
 ```
 
 Associate the dependency with your target:
 ```swift
 targets: [
-.target(name: "App", dependencies: ["AESCryptable"])
+  .target(name: "App", dependencies: ["AESCryptable"])
 ]
 ```
 Run: `swift build`
