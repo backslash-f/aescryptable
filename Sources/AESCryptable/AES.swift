@@ -24,20 +24,14 @@ public struct AES {
 
     // MARK: Key Related
 
-    public let keyData: Data
-
-    internal var keyLength: Int {
-        return keyData.count
-    }
-
-    internal var keyBytes: UnsafePointer<Int>? {
-        return keyData.bytesBoundToInt()
-    }
+    // Seems like the easiest way to avoid the `withUnsafeBytes` mess is to use NSData.bytes.
+    public let key: NSData
 
     // MARK: CCCrypt Related
 
-    internal let ivSize: Int     = kCCBlockSizeAES128
-    internal let options: UInt32 = CCOptions(kCCOptionPKCS7Padding)
+    internal let ivSize: Int            = kCCBlockSizeAES128
+    internal let algorithm: CCAlgorithm = UInt32(kCCAlgorithmAES)
+    internal let options: UInt32        = CCOptions(kCCOptionPKCS7Padding)
 
     // MARK: - Lifecycle
 
@@ -55,6 +49,6 @@ public struct AES {
         guard let keyData: Data = keyString.data(using: .utf8) else {
             throw AESError.stringToDataFailed
         }
-        self.keyData = keyData
+        self.key = NSData(data: keyData)
     }
 }
