@@ -5,13 +5,10 @@
 # AESCryptable
 Provides `Advanced Encryption Standard (AES)` encryption / decryption capabilities.
 
-## Details
-- [x] Relies on `CCCrypt` (`CommonCrypto`). CCCrypt man pages: http://bit.ly/cccryptManPages
-- [x] Works (only) with 256 bit AES keys size. This is by design.
-- [x] Uses `kCCOptionPKCS7Padding` as `CCOptions`.
+- [x] Relies on native [`CCCrypt`](http://bit.ly/cccryptManPages) via (`import CommonCrypto`).
 - [x] Uses `Cipher Block Chaining (CBC)` mode with random `Initialization Vector (iv)` data.
-
-Interesting reading: [Differences between DES and AES](http://bit.ly/desVSaes)
+- [x] Works (only) with AES `256-bit key. This is by design.
+- [x] Uses `kCCOptionPKCS7Padding` as `CCOptions` by default.
 
 ## Integration
 In your `Package.swift`, add `AESCryptable` as a dependency:
@@ -28,7 +25,7 @@ targets: [
   .target(name: "App", dependencies: ["AESCryptable"])
 ]
 ```
-Run: `swift build`  
+Run: `swift build`
 
 (or `vapor update -y`)
 
@@ -50,4 +47,4 @@ do {
 }
 ```
 
-Refer to [the test class](https://github.com/backslash-f/aes-swift/blob/master/Tests/AESCryptableTests.swift) for a high-level overview.
+Refer to [the test class](https://github.com/backslash-f/aescryptable/blob/master/Tests/AESCryptableTests/AESCryptableTests.swift) for a high-level overview.
