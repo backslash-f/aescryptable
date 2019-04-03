@@ -25,8 +25,7 @@ targets: [
   .target(name: "App", dependencies: ["AESCryptable"])
 ]
 ```
-Run: `swift build`
-
+Run: `swift build`  
 (or `vapor update -y`)
 
 ## Example
