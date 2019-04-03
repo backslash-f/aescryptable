@@ -19,8 +19,8 @@ public enum AESError: Error {
     case invalidKeySize
     case emptyStringToEncrypt
     case generateRandomIVFailed
-    case encryptDataFailed
+    case encryptionFailed
     case stringToDataFailed
-    case decryptDataFailed
+    case decryptionFailed
     case dataToStringFailed
 }
