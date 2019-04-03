@@ -9,7 +9,7 @@ Provides `Advanced Encryption Standard (AES)` encryption / decryption capabiliti
 - [x] Relies on `CCCrypt` (`CommonCrypto`). CCCrypt man pages: http://bit.ly/cccryptManPages
 - [x] Works (only) with 256 bit AES keys size. This is by design.
 - [x] Uses `kCCOptionPKCS7Padding` as `CCOptions`.
-- [🐞] Uses `Cipher Block Chaining (CBC)` mode with random `Initialization Vector (iv)` data. (Not yet. Bug to be fixed.)
+- [x] Uses `Cipher Block Chaining (CBC)` mode with random `Initialization Vector (iv)` data.
 
 Interesting reading: [Differences between DES and AES](http://bit.ly/desVSaes)
 
