@@ -28,24 +28,26 @@ targets: [
   .target(name: "App", dependencies: ["AESCryptable"])
 ]
 ```
-Run: `swift build`
+Run: `swift build`  
 
-## Usage
+(or `vapor update -y`)
+
+## Example
 ```swift
 import AESCryptable
 
 do {
 
-// encrypt
-let aes = try AES(keyString: "01234567890123456789012345678901")
-let encryptedData = try aesEncrypt.encrypt("The black night always triumphs!")
+  // encrypt
+  let aes = try AES(keyString: "01234567890123456789012345678901")
+  let encryptedData = try aes.encrypt("The black night always triumphs!")
 
-// decrypt
-let decryptedString = try aes.decrypt(encryptedData)
-print(decryptedString) // The black night always triumphs!
+  // decrypt
+  let decryptedString = try aes.decrypt(encryptedData)
+  print(decryptedString) // The black night always triumphs!
 
 } catch {
-...
+  print(error)
 }
 ```
 
