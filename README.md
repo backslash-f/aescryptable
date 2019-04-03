@@ -7,7 +7,7 @@ Provides `Advanced Encryption Standard (AES)` encryption / decryption capabiliti
 
 - [x] Relies on native [`CCCrypt`](http://bit.ly/cccryptManPages) (via `import CommonCrypto`).
 - [x] Uses `Cipher Block Chaining (CBC)` mode with random `Initialization Vector (iv)` data.
-- [x] Works (only) with AES `256-bit key. This is by design.
+- [x] Works (only) with AES `256-bit key`. This is by design.
 - [x] Uses `kCCOptionPKCS7Padding` as `CCOptions` by default.
 
 ## Integration
