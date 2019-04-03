@@ -37,7 +37,6 @@ Run: `swift build`
 import AESCryptable
 
 do {
-
   // encrypt
   let aes = try AES(keyString: "01234567890123456789012345678901")
   let encryptedData = try aes.encrypt("The black night always triumphs!")
