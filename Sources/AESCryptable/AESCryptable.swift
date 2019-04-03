@@ -58,7 +58,6 @@ extension AES: Cryptable {
                     }
                 }
             }
-            
         } catch {
             throw AESError.encryptionFailed
         }
