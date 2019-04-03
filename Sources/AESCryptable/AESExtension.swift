@@ -16,16 +16,25 @@ internal extension AES {
     /// Generates an `Initialization Vector` with random data for the `Cipher Block Chaining (CBC)` mode with
     /// block size `kCCBlockSizeAES128`.
     ///
-    /// - Parameter bytes: The `UnsafeMutablePointer<Int>` in which the generated `iv` will be attached into.
+    /// - Parameter data: The `Data` in which the generated `iv` will be attached into.
     /// - Throws: `AESError`
-    func generateRandomIV(for bytes: UnsafeMutablePointer<Int>) throws {
-        let status: Int32 = SecRandomCopyBytes(
-            kSecRandomDefault,
-            kCCBlockSizeAES128,
-            bytes
-        )
-        guard status == 0 else {
-            throw AESError.generateRandomIVFailed
+    func generateRandomIV(for data: inout Data) throws {
+        
+        try data.withUnsafeMutableBytes { dataBytes in
+            
+            guard let dataBytesBaseAddress = dataBytes.baseAddress else {
+                throw AESError.generateRandomIVFailed
+            }
+            
+            let status: Int32 = SecRandomCopyBytes(
+                kSecRandomDefault,
+                kCCBlockSizeAES128,
+                dataBytesBaseAddress
+            )
+            
+            guard status == 0 else {
+                throw AESError.generateRandomIVFailed
+            }
         }
     }
 }
