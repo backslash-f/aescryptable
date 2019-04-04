@@ -46,9 +46,9 @@ do {
 }
 ```
 
+(Refer to [the test class](https://github.com/backslash-f/aescryptable/blob/master/Tests/AESCryptableTests/AESCryptableTests.swift) for a high-level overview.)
+
 ## Demo
 Clone the repo and use `AESCryptable.playground` to see the code in action:
 
 ![AESCryptable Demo](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.playground.gif)
-
-Refer to [the test class](https://github.com/backslash-f/aescryptable/blob/master/Tests/AESCryptableTests/AESCryptableTests.swift) for a high-level overview.
