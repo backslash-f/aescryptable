@@ -10,11 +10,6 @@ Provides [`Advanced Encryption Standard (AES)`](https://en.wikipedia.org/wiki/Ad
 - [x] Works (only) with **256-bit** [`key size`](https://en.wikipedia.org/wiki/Key_size). This is by design.
 - [x] Uses `kCCOptionPKCS7Padding` as `CCOptions` by default.
 
-## Demo
-Clone the repo and use `AESCryptable.playground` to see the code in action:
-
-![AESCryptable Demo](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.playground.gif)
-
 ## Integration
 In your `Package.swift`, add `AESCryptable` as a dependency:
 ```swift
@@ -50,5 +45,10 @@ do {
   print(error)
 }
 ```
+
+## Demo
+Clone the repo and use `AESCryptable.playground` to see the code in action:
+
+![AESCryptable Demo](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.playground.gif)
 
 Refer to [the test class](https://github.com/backslash-f/aescryptable/blob/master/Tests/AESCryptableTests/AESCryptableTests.swift) for a high-level overview.
