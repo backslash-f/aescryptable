@@ -33,7 +33,7 @@ extension AES: Cryptable {
                         guard let keyBytesBaseAddress = keyBytes.baseAddress,
                             let dataToEncryptBytesBaseAddress = dataToEncryptBytes.baseAddress,
                             let bufferBytesBaseAddress = bufferBytes.baseAddress else {
-                                throw AESError.encryptionFailed
+                                throw Error.encryptionFailed
                         }
                         
                         let cryptStatus: CCCryptorStatus = CCCrypt( // Stateless, one-shot encrypt operation
@@ -51,13 +51,13 @@ extension AES: Cryptable {
                         )
                         
                         guard cryptStatus == CCCryptorStatus(kCCSuccess) else {
-                            throw AESError.encryptionFailed
+                            throw Error.encryptionFailed
                         }
                     }
                 }
             }
         } catch {
-            throw AESError.encryptionFailed
+            throw Error.encryptionFailed
         }
         
         let encryptedData: Data = buffer[..<(numberBytesEncrypted + ivSize)]
@@ -81,7 +81,7 @@ extension AES: Cryptable {
                         guard let keyBytesBaseAddress = keyBytes.baseAddress,
                             let dataToDecryptBytesBaseAddress = dataToDecryptBytes.baseAddress,
                             let bufferBytesBaseAddress = bufferBytes.baseAddress else {
-                                throw AESError.encryptionFailed
+                                throw Error.encryptionFailed
                         }
                         
                         let cryptStatus: CCCryptorStatus = CCCrypt( // Stateless, one-shot encrypt operation
@@ -99,19 +99,19 @@ extension AES: Cryptable {
                         )
                         
                         guard cryptStatus == CCCryptorStatus(kCCSuccess) else {
-                            throw AESError.decryptionFailed
+                            throw Error.decryptionFailed
                         }
                     }
                 }
             }
         } catch {
-            throw AESError.encryptionFailed
+            throw Error.encryptionFailed
         }
         
         let decryptedData: Data = buffer[..<numberBytesDecrypted]
         
         guard let decryptedString = String(data: decryptedData, encoding: .utf8) else {
-            throw AESError.dataToStringFailed
+            throw Error.dataToStringFailed
         }
         
         return decryptedString

@@ -43,7 +43,7 @@ public struct AES {
     public init(keyString: String) throws {
         
         guard keyString.count == kCCKeySizeAES256 else {
-            throw AESError.invalidKeySize
+            throw AES.Error.invalidKeySize
         }
 
         self.key = Data(keyString.utf8)

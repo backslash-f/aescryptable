@@ -7,7 +7,7 @@ final class AESTests: XCTestCase {
         do {
             let _ = try AES(keyString: "banana")
         } catch {
-            guard let aesError = error as? AESError else {
+            guard let aesError = error as? AES.Error else {
                 XCTFail("Unexpected error: \(error)")
                 return
             }
@@ -30,7 +30,7 @@ final class AESTests: XCTestCase {
             let aes = try AES(keyString: "C_5};5fHV(v3M&h{m]6h_p[z[4h@ZWM$")
             let _ = try aes.encrypt(stringToEncrypt)
         } catch {
-            guard let aesError = error as? AESError else {
+            guard let aesError = error as? AES.Error else {
                 XCTFail("Unexpected error: \(error)")
                 return
             }
@@ -75,7 +75,7 @@ final class AESTests: XCTestCase {
             let _ = try aesIncorrectKey.decrypt(encryptedData)
 
         } catch {
-            guard let aesError = error as? AESError else {
+            guard let aesError = error as? AES.Error else {
                 XCTFail("Unexpected error: \(error)")
                 return
             }
