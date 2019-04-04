@@ -28,7 +28,7 @@ targets: [
 Run: `swift build`  
 (or `vapor update -y`)
 
-## Example
+## Usage
 ```swift
 import AESCryptable
 
