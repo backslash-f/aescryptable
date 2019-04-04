@@ -17,9 +17,7 @@ extension AES: Cryptable {
 
     public func encrypt(_ string: String) throws -> Data {
         
-        guard let dataToEncrypt: Data = string.data(using: .utf8) else {
-            throw AESError.stringToDataFailed
-        }
+        let dataToEncrypt: Data = Data(string.utf8)
         
         let bufferSize: Int = ivSize + dataToEncrypt.count + kCCBlockSizeAES128
         var buffer = Data(count: bufferSize)

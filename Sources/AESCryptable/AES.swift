@@ -45,10 +45,7 @@ public struct AES {
         guard keyString.count == kCCKeySizeAES256 else {
             throw AESError.invalidKeySize
         }
-        guard let keyData: Data = keyString.data(using: .utf8) else {
-            throw AESError.stringToDataFailed
-        }
-        
-        self.key = keyData
+
+        self.key = Data(keyString.utf8)
     }
 }

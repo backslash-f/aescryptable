@@ -20,7 +20,6 @@ public enum AESError: Error {
     case emptyStringToEncrypt
     case generateRandomIVFailed
     case encryptionFailed
-    case stringToDataFailed
     case decryptionFailed
     case dataToStringFailed
 }
