@@ -37,7 +37,7 @@ public extension AES {
 internal extension AES {
     
     /// Generates an `Initialization Vector` with random data for the `Cipher Block Chaining (CBC)` mode with
-    /// block size `kCCBlockSizeAES128`.
+    /// block size `kCCBlockSizeAES128` and append it to the give `Data`.
     ///
     /// - Parameter data: The `Data` in which the generated `iv` will be attached into.
     /// - Throws: `AESError`
