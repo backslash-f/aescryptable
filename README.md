@@ -34,11 +34,11 @@ import AESCryptable
 do {
   // encrypt
   let aes = try AES(keyString: "01234567890123456789012345678901")
-  let encryptedData = try aes.encrypt("The black night always triumphs!")
+  let encryptedData = try aes.encrypt("The black knight always triumphs!")
 
   // decrypt
   let decryptedString = try aes.decrypt(encryptedData)
-  print(decryptedString) // The black night always triumphs!
+  print(decryptedString) // The black knight always triumphs!
 
 } catch {
   print(error)
