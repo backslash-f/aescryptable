@@ -12,6 +12,14 @@ Provides [`Advanced Encryption Standard (AES)`](https://en.wikipedia.org/wiki/Ad
 - [x] Uses `kCCOptionPKCS7Padding` as `CCOptions` by default.
 
 ## Integration
+### Xcode 11+
+![AESCryptable Xcode 11 SPM](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.XcodeSPM.gif)
+
+More from WWDC 2019:  
+[Adopting Swift Packages in Xcode](https://developer.apple.com/videos/play/wwdc2019/408/)  
+[Creating Swift Packages](https://developer.apple.com/videos/play/wwdc2019/410/)
+
+### Via Package.swift
 In your `Package.swift`, add `AESCryptable` as a dependency:
 ```swift
 dependencies: [
