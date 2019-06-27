@@ -13,7 +13,7 @@ Provides [`Advanced Encryption Standard (AES)`](https://en.wikipedia.org/wiki/Ad
 
 ## Integration
 ### Xcode 11+
-![AESCryptable Xcode 11 SPM](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.XcodeSPM.gif)
+![AESCryptable Xcode 11 SPM](https://i.imgur.com/JKciz5T.gif)
 
 More from WWDC 2019:  
 [Adopting Swift Packages in Xcode](https://developer.apple.com/videos/play/wwdc2019/408/)  
@@ -59,4 +59,4 @@ do {
 ## Demo
 Clone the repo and use `AESCryptable.playground` to see the code in action:
 
-![AESCryptable Demo](https://github.com/backslash-f/aescryptable/blob/master/AESCryptable.playground.gif)
+![AESCryptable Demo](https://i.imgur.com/6cI5Knu.gif)

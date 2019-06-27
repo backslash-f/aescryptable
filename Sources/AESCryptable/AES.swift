@@ -19,11 +19,11 @@ import CommonCrypto
 ///
 /// Interesting reading: [Differences between DES and AES](http://bit.ly/desVSaes)
 public struct AES {
-    
+
     // MARK: - Internal Properties
 
     // MARK: Key Related
-    
+
     public let key: Data
 
     // MARK: CCCrypt Related
@@ -41,7 +41,7 @@ public struct AES {
     /// - Parameter keyString: 256 bit AES key size.
     /// - Throws: `AESError`
     public init(keyString: String) throws {
-        
+
         guard keyString.count == kCCKeySizeAES256 else {
             throw AES.Error.invalidKeySize
         }

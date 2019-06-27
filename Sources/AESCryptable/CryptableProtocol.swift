@@ -10,7 +10,7 @@ import Foundation
 
 /// Conform to this protocol to implement and provide encryption / decryption capabilities.
 protocol Cryptable {
-    
+
     /// Encrypts the given `String` and returns it as `Data`.
     ///
     /// - Parameter string: The information to be encrypted.
