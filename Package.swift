@@ -20,5 +20,5 @@ let package = Package(
             name: "AESCryptableTests",
             dependencies: ["AESCryptable"]),
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [5]
 )
