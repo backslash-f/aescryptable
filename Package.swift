@@ -1,7 +1,5 @@
 // swift-tools-version:5.1
 
-swiftLanguageVersions: [.v5]
-
 import PackageDescription
 
 let package = Package(
@@ -20,5 +18,5 @@ let package = Package(
             name: "AESCryptableTests",
             dependencies: ["AESCryptable"]),
     ],
-    swiftLanguageVersions: [5]
+    swiftLanguageVersions: [.v5]
 )
